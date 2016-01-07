@@ -9,10 +9,10 @@
  */
 
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: __dirname + "/src",
+  context: __dirname + '/src',
   entry: {
     app: './index.jsx',
     vendor: ['react', 'd3', 'lodash']
@@ -36,16 +36,20 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]"
+        loader: 'file?name=[name].[ext]'
       },
       {
-        test: /\.css$/, //loader: "style!css!sass"
-        loader: ExtractTextPlugin.extract("style", "css")
+        test: /\.css$/, //loader: 'style!css!sass'
+        loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"concordance.deps.js"),
-    new ExtractTextPlugin("concordance.css")
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'concordance.deps.js'),
+    new ExtractTextPlugin('concordance.css')
   ]
 };

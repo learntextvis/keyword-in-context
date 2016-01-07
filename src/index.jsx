@@ -3,18 +3,14 @@ import ReactDOM from 'react-dom';
 
 import Search from './components/search/search.jsx';
 import Concordance from './components/concordance/concordance.jsx';
-import sampleData from '../data/sample_data';
+
+import config from '../data/config.json';
+import data from '../data/data.json';
 
 import '../index.html';
 
 document.addEventListener("DOMContentLoaded", function() {
-
-  var text = sampleData.value;
-  var config = {
-    contextSize: 20,
-    caseSensitive:true
-  };
-
+  console.log(config, data)
   // Update our concordance view.
   //
   // Note: A function like could be added as a class method to Concordance
@@ -24,8 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
       <div>
         <Search updated={update} />
         <Concordance
-          config={config}
-          text={text}
+          caseSensitive={config.caseSensitive}
+          contextSize={config.contextSize}
+          text={data[0].text}
           query={query}
         />
       </div>,
@@ -34,5 +31,5 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Render initial state.
-  update('')
+  update(config.query);
 });

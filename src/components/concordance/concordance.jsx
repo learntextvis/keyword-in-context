@@ -34,7 +34,7 @@ export default class Concordance extends React.Component {
 
     // Set up search options
     var searchFlags = 'ig';
-    if(this.props.config.caseSensitive) {
+    if(this.props.caseSensitive) {
       searchFlags = 'g';
     }
 
@@ -82,7 +82,7 @@ export default class Concordance extends React.Component {
     var matches = this.findMatches(
       this.props.text,
       this.props.query,
-      this.props.config.contextSize
+      this.props.contextSize
     );
     return matches.map((d, i) => {
       return <MatchWithContext
@@ -104,10 +104,10 @@ export default class Concordance extends React.Component {
 }
 
 Concordance.propTypes = {
-  // Configuration options including.
-  //  config.caseSensitive: boolean
-  //  config.contextSize: number
-  config: React.PropTypes.object.isRequired,
+  // Number of characters to use on either side of a match as context
+  contextSize: React.PropTypes.number.isRequired,
+  // Whether to perform case sensitive search or not
+  caseSensitive: React.PropTypes.bool.isRequired,
   // Text to search for matches
   text: React.PropTypes.string.isRequired,
   // Query String
