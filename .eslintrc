@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "globals": {
+    "React": true
+  },
+
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "camelcase": 2,
+    "curly": 2,
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "semi": 0,
+    "space-infix-ops": 2,
+    "no-unused-vars": 2,
+    "no-undef": 2,
+    "semi": [2, "always"]
+  }
+}
