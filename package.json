@@ -1,11 +1,11 @@
 {
-  "name": "concordance",
+  "name": "keyword-in-context",
   "version": "0.0.1",
-  "description": "A concordance view for text",
-  "main": "src/index.jsx",
+  "description": "A keyword-in-context view for text",
+  "main": "src/components/keyword_in_context/index.jsx",
   "author": "Yannick Assogba",
   "license": "MIT",
-  "repository": "https://github.com/learntextvis/concordance",
+  "repository": "https://github.com/learntextvis/keyword-in-context",
   "dependencies": {
     "d3": "^3.5.6",
     "lodash": "^3.10.1",

@@ -2,7 +2,7 @@ import React from 'react'; //eslint-disable-line
 import ReactDOM from 'react-dom';
 
 import Search from './components/search/search.jsx';
-import Concordance from './components/concordance/concordance.jsx';
+import KeywordInContext from './components/keyword_in_context/keyword_in_context.jsx';
 
 import config from '../data/config.json';
 import data from '../data/data.json';
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ReactDOM.render(
       <div>
         <Search updated={update} />
-        <Concordance
+        <KeywordInContext
           caseSensitive={config.caseSensitive}
           contextSize={config.contextSize}
           text={data[0].text}

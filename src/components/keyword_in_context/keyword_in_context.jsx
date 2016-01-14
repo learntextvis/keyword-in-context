@@ -1,7 +1,7 @@
 import React from 'react';
 import MatchWithContext from '../match_with_context/match_with_context.jsx';
 
-import './concordance.css';
+import './keyword_in_context.css';
 
 /**
  * A component that renders a keyword-in-context concordance view
@@ -9,7 +9,7 @@ import './concordance.css';
  * to use as tokens, will display matches in the text along with surrounding
  * context.
  */
-export default class Concordance extends React.Component {
+export default class KeywordInContext extends React.Component {
 
   /**
    * Given a string and a query, will return a list of objects
@@ -103,7 +103,7 @@ export default class Concordance extends React.Component {
   }
 }
 
-Concordance.propTypes = {
+KeywordInContext.propTypes = {
   // Number of characters to use on either side of a match as context
   contextSize: React.PropTypes.number.isRequired,
   // Whether to perform case sensitive search or not

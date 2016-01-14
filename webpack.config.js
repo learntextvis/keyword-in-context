@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/build',
-    filename: 'concordance.js'
+    filename: 'keyword_in_context.js'
   },
   debug: true,
   devtool: 'source-map',
@@ -49,7 +49,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'concordance.deps.js'),
-    new ExtractTextPlugin('concordance.css')
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'keyword_in_context.deps.js'),
+    new ExtractTextPlugin('keyword_in_context.css')
   ]
 };
