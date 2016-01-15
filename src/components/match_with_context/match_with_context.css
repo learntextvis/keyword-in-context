@@ -1,11 +1,22 @@
+.concordance .match-with-context {
+  font-family: sans-serif;
+  display: table-row;
+  color: #222222;
+  background-color: white;
+}
+
 .concordance .match-with-context .before {
-  color: blue;
+  display: table-cell;
+  text-align: right;
 }
 
 .concordance .match-with-context .match {
+  display: table-cell;
+  text-align: center;
   color: red;
 }
 
 .concordance .match-with-context .after {
-  color: green;
+  display: table-cell;
+  text-align: left;
 }
