@@ -45,9 +45,9 @@ export default class KeywordInContext extends React.Component {
     var matchIndices = [];
     var match;
     while(match = qReg.exec(source)) {
-      matchIndices.push([match[0], qReg.lastIndex]);
-    }
+      matchIndices.push([match[0], qReg.lastIndex - 1]);
 
+    }
     // Then for each match we build a string with some characters on either
     // side representing context.
     var matchesWithContext = matchIndices.map((mi) => {
@@ -55,13 +55,14 @@ export default class KeywordInContext extends React.Component {
       var index = mi[1];
 
       var context = source.substring(
-        index - contextSize - 1,
+        index - contextSize,
         index + qLen + contextSize
       );
 
-      // TODO this has potential for being incorrect when there
-      // is a match in the preceding part of the context string.
-      var inContextIndex = context.indexOf(match);
+      // Calculate the index of the match in the context substring.
+      // This is equal to the match index - the number of letters removed
+      // from the beginning of source string up to the match index.
+      var inContextIndex = index - source.substring(0, index - contextSize).length;
 
       return {
         context: context,
