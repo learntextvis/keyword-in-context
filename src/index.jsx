@@ -10,7 +10,6 @@ import data from '../data/data.json';
 import '../index.html';
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log(config, data)
   // Update our concordance view.
   //
   // Note: A function like could be added as a class method to Concordance
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
           contextSize={config.contextSize}
           text={data[0].text}
           query={query}
+          limit={config.limit}
         />
       </div>,
       document.querySelector("#main")
