@@ -1,11 +1,11 @@
-.concordance .match-with-context .before {
+.keywords-in-context .match-with-context .before {
   color: blue;
 }
 
-.concordance .match-with-context .match {
+.keywords-in-context .match-with-context .match {
   color: red;
 }
 
-.concordance .match-with-context .after {
+.keywords-in-context .match-with-context .after {
   color: green;
 }
