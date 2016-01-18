@@ -12,14 +12,14 @@ export default class MatchWithContext extends React.Component {
     var before = this.props.context.substring(
       0,
       this.props.index
-    );
+    ).replace(/ /gm, '\u00a0');
     var match = this.props.context.substring(
       this.props.index,
       this.props.index + this.props.match.length
-    );
+    ).replace(/ /gm, '\u00a0');
     var after = this.props.context.substring(
       this.props.index + this.props.match.length
-    );
+    ).replace(/ /gm, '\u00a0');
 
     return (
       <div className='match-with-context'>

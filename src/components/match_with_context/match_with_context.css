@@ -1,11 +1,22 @@
+.keywords-in-context .match-with-context {
+  font-family: sans-serif;
+  display: table-row;
+  color: #222222;
+  background-color: white;
+}
+
 .keywords-in-context .match-with-context .before {
-  color: blue;
+  display: table-cell;
+  text-align: right;
 }
 
 .keywords-in-context .match-with-context .match {
+  display: table-cell;
+  text-align: center;
   color: red;
 }
 
 .keywords-in-context .match-with-context .after {
-  color: green;
+  display: table-cell;
+  text-align: left;
 }
