@@ -84,13 +84,20 @@ export default class KeywordInContext extends React.Component {
       this.props.query,
       this.props.contextSize
     );
+
+    if(this.props.limit && this.props.limit > 0) {
+      matches = matches.slice(0, this.props.limit);
+    }
+
     return matches.map((d, i) => {
-      return <MatchWithContext
+      return (
+        <MatchWithContext
         key={i}
         context={d.context}
         match={d.match}
         index={d.index}
-        />;
+        />
+      );
     });
   }
 
@@ -111,5 +118,7 @@ KeywordInContext.propTypes = {
   // Text to search for matches
   text: React.PropTypes.string.isRequired,
   // Query String
-  query: React.PropTypes.string.isRequired
+  query: React.PropTypes.string.isRequired,
+  // constrain list to for x matches
+  limit: React.PropTypes.number
 };
