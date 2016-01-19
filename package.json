@@ -2,7 +2,7 @@
   "name": "keyword-in-context",
   "version": "0.0.1",
   "description": "A keyword-in-context view for text",
-  "main": "src/components/keyword_in_context/index.jsx",
+  "main": "index.js",
   "author": "Yannick Assogba",
   "license": "MIT",
   "repository": "https://github.com/learntextvis/keyword-in-context",
