@@ -10,6 +10,26 @@
 
 var webpack = require('webpack');
 
+var filename;
+var vendorName;
+var plugins = [];
+
+if(process.env.BUNDLE_DEPS) {
+  filename = 'keyword_in_context.all.js';
+} else {
+  filename = 'keyword_in_context.js';
+  vendorName = 'keyword_in_context.deps.js';
+  plugins.push(
+    new webpack.optimize.CommonsChunkPlugin('vendor', vendorName)
+  );
+}
+
+if(process.env.MINIFY) {
+  plugins.push(
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+  );
+}
+
 module.exports = {
   context: __dirname,
   entry: {
@@ -21,15 +41,9 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: 'keyword_in_context.js',
+    filename: filename,
     libraryTarget: 'umd'
   },
-  // externals: {
-  //   'react': 'react',
-  //   'react-dom': 'react-dom',
-  //   'd3': 'd3',
-  //   'lodash': 'lodash'
-  // },
   debug: false,
   devtool: 'source-map',
   module: {
@@ -57,7 +71,5 @@ module.exports = {
       },
     ]
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'keyword_in_context.deps.js')
-  ]
+  plugins: plugins
 };

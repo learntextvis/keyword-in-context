@@ -30,6 +30,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --progress --colors --config webpack.dev.config.js",
-    "build": "webpack"
+    "build-fast": "webpack",
+    "build-all": "MINIFY=true webpack && BUNDLE_DEPS=true,MINIFY=true webpack",
+    "prepublish": "build-all"
   }
 }
