@@ -1,7 +1,7 @@
 /**
  * Build configuration.
  *
- * This will build the app with the result in the build/ folder
+ * This will build the app with the result in the dist/ folder
  * Javascript dependencies are built to a separate file as are css
  * and the main html file.
  *
@@ -9,19 +9,28 @@
  */
 
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: __dirname + '/src',
+  context: __dirname,
   entry: {
-    app: './index.jsx',
-    vendor: ['react', 'd3', 'lodash']
+    main: './index.js',
+    vendor: ['react', 'react-dom', 'd3', 'lodash']
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/build',
-    filename: 'keyword_in_context.js'
+    path: __dirname + '/dist',
+    filename: 'keyword_in_context.js',
+    libraryTarget: 'umd'
   },
-  debug: true,
+  // externals: {
+  //   'react': 'react',
+  //   'react-dom': 'react-dom',
+  //   'd3': 'd3',
+  //   'lodash': 'lodash'
+  // },
+  debug: false,
   devtool: 'source-map',
   module: {
     loaders: [
@@ -39,8 +48,8 @@ module.exports = {
         loader: 'file?name=[name].[ext]'
       },
       {
-        test: /\.css$/, //loader: 'style!css!sass'
-        loader: ExtractTextPlugin.extract('style', 'css')
+        test: /\.css$/,
+        loader: 'style!css'
       },
       {
         test: /\.json$/,
@@ -49,7 +58,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'keyword_in_context.deps.js'),
-    new ExtractTextPlugin('keyword_in_context.css')
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'keyword_in_context.deps.js')
   ]
 };
