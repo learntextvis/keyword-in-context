@@ -4,7 +4,7 @@ import MatchWithContext from '../match_with_context/match_with_context.jsx';
 import './keyword_in_context.css';
 
 /**
- * A component that renders a keyword-in-context concordance view
+ * A component that renders a keyword-in-context view
  * of a text. Given a text, a query string and a number of characters
  * to use as tokens, will display matches in the text along with surrounding
  * context.
@@ -96,7 +96,7 @@ export default class KeywordInContext extends React.Component {
 
   render() {
     return (
-      <div className='concordance'>
+      <div className='keywords-in-context'>
         {this.renderMatches()}
       </div>
     );
