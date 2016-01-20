@@ -2,10 +2,13 @@
   "name": "keyword-in-context",
   "version": "0.0.1",
   "description": "A keyword-in-context view for text",
+  "keyword": ["text", "visualization", "concordance"],
   "main": "index.js",
-  "author": "Yannick Assogba",
+  "author": "Yannick Assogba <yannick@bocoup.com>",
   "license": "MIT",
   "repository": "https://github.com/learntextvis/keyword-in-context",
+  "files": ["dist"],
+  "engines" : { "node" : ">=4.0" } }
   "dependencies": {
     "d3": "^3.5.6",
     "lodash": "^3.10.1",
