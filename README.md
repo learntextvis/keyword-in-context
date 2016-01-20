@@ -10,9 +10,7 @@ There are two primary ways to use this component. Via `script` tags, which is su
 
 ## Via Script Tags
 
-To use the component via script tags. Download this repository and look in the `dist` folder. There are three files there of note
-
- - `keyword_in_context.all.js` - This is the component bundled with all of its dependencies. Start here if you are just beginning.
+To use the component via script tags. Download this repository and look in the `dist` folder. There are two files there of particular note
 
  - `keyword_in_context.js` - The component.
 
@@ -20,7 +18,7 @@ To use the component via script tags. Download this repository and look in the `
 
 All of these files are minified which may make them hard to read. So they all have corresponding source maps that end in `.map`.
 
-The example below will assume you copied `keyword_in_context.all.js` into your project.
+You should copy both these files into your project.
 
 `Sample HTML file — This is your index.html or similar`
 ```html
@@ -29,7 +27,8 @@ The example below will assume you copied `keyword_in_context.all.js` into your p
 <html>
 <head>
   <title></title>
-  <script type="text/javascript" src="keyword_in_context.all.js"></script>  
+  <script type="text/javascript" src="./keyword_in_context.deps.js"></script>
+  <script type="text/javascript" src="./keyword_in_context.js"></script>
 </head>
 
 <body>
@@ -70,6 +69,8 @@ The example below will assume you copied `keyword_in_context.all.js` into your p
 </script>
 </html>
 ```
+
+You can open this file in your browser to see it in action, but you will probably want to move to using a webserver, a simple one is the one built into python `python -m SimpleHTTPServer`.
 
 ## As a react component
 
