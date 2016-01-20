@@ -2,7 +2,7 @@
 
 A visualization that displays a keyword in context view given a text and a query. An example is show below with the query highlighted in red.
 
-![Keyword In Context Screenshot](screenshot.png)
+![Keyword In Context Screenshot](screenshots/screenshot.png)
 
 # Usage
 
