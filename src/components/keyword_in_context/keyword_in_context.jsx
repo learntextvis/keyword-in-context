@@ -46,8 +46,7 @@ export default class KeywordInContext extends React.Component {
     var matchIndices = [];
     var match;
     while(match = qReg.exec(source)) {
-      matchIndices.push([match[0], qReg.lastIndex - 1]);
-
+      matchIndices.push([match[0], qReg.lastIndex - match[0].length]);
     }
     // Then for each match we build a string with some characters on either
     // side representing context.

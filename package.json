@@ -1,6 +1,6 @@
 {
   "name": "keyword-in-context",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A keyword-in-context view for text",
   "keyword": ["text", "visualization", "concordance"],
   "main": "index.js",
