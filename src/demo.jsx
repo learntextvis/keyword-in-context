@@ -7,13 +7,10 @@ import KeywordInContext from './components/keyword_in_context/keyword_in_context
 import config from '../data/config.json';
 import data from '../data/data.json';
 
-import '../index.html';
+import './demo.html';
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Update our concordance view.
-  //
-  // Note: A function like could be added as a class method to Concordance
-  // to allow direct rendering and hiding ReacDOM.render completely
+  // Update our keyword in context view.
   function update(query){
     ReactDOM.render(
       <div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import MatchWithContext from '../match_with_context/match_with_context.jsx';
 
 import './keyword_in_context.css';
@@ -122,4 +123,35 @@ KeywordInContext.propTypes = {
   query: React.PropTypes.string.isRequired,
   // constrain list to for x matches
   limit: React.PropTypes.number
+};
+
+/**
+ * Helper method for instatiating this method imperatively
+ * (as opposed to declaratively with React.)
+ *
+ * @param  {Object} opts display paramters.
+ * @param  {Object} opts.config
+ * @param  {Array} opts.data
+ * @param  {DOMNode} opts.container
+ * @param  {String} opts.query
+ *
+ */
+KeywordInContext.show = function(opts) {
+  var config = opts.config;
+  var data = opts.data;
+  var query = opts.query;
+  var container = opts.container;
+
+  ReactDOM.render(
+    <div>
+      <KeywordInContext
+        caseSensitive={config.caseSensitive}
+        contextSize={config.contextSize}
+        text={data[0].text}
+        query={query}
+        limit={config.limit}
+      />
+    </div>,
+    container
+  );
 };
